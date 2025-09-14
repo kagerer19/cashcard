@@ -9,9 +9,9 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer cardId;
+    private Long cardId;
 
-    private String amount;
+    private double amount;
 
     private String currency;
 
@@ -19,18 +19,18 @@ public class Card {
 
     public Card() {}
 
-    public Card(Integer cardId, String amount, String currency, LocalDate expirationDate) {
+    public Card(Long cardId, double amount, String currency, LocalDate expirationDate) {
         this.cardId = cardId;
         this.amount = amount;
         this.currency = currency;
         this.expirationDate = expirationDate;
     }
 
-    public Integer getCardId() {
+    public Long getCardId() {
         return this.cardId;
     }
 
-    public String getAmount() {
+    public double getAmount() {
         return this.amount;
     }
 
