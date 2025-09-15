@@ -33,11 +33,7 @@ class CashCardController {
     private ResponseEntity<Card> findById(@PathVariable long requestedId) {
         Optional<Card> cardOptional = cardRepository.findById(requestedId);
 
-        if(cardOptional.isPresent()){
-            return ResponseEntity.ok(cardOptional.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return cardOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/cards")
