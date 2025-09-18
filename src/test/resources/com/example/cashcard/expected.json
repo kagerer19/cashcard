@@ -1,4 +1,5 @@
 {
+  "cardId": 99,
   "amount": 123.45,
   "currency": "EUR",
   "expirationDate": "2025-12-12"
