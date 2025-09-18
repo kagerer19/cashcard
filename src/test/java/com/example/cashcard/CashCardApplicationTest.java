@@ -15,7 +15,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CashCardApplicationTest {
     @Autowired
     TestRestTemplate restTmplate;
-//!TODO adjust test once endpoints have been defined
     @Test
     void shouldReturnACashCardWhenDataIsSaved() {
         ResponseEntity<String> response = restTmplate.getForEntity("/cashcards/99", String.class);

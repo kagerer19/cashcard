@@ -36,7 +36,6 @@ public class CashCardJsonTest {
                     "expirationDate": "2025-12-12"
                 }
                 """ ;
-        //!TODO Adjust test to compare values not memory location. Or we can override equals function for Card class
         assertThat(json.parse(expected)).isEqualTo(new Card(99L, 123.45, "EUR", LocalDate.of(2025, 12, 12)));
         assertThat(json.parseObject(expected).getCardId()).isEqualTo(99);
         assertThat(json.parseObject(expected).getAmount()).isEqualTo(123.45);
